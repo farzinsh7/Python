@@ -502,6 +502,17 @@ point = {"x": 1, "y": 2}
 # values = [x*2 for x in range(10)]  # we get list
 # for x in values:
 #     print(x)
-values = (x*2 for x in range(10))  # we get generator object
-print(values)
+# values = (x*2 for x in range(10))  # we get generator object
+# print(values)
 """generator object it's very usefull and have a lower size than others"""
+
+# ---------------
+
+# Unpacking Operators
+# numbers = [1, 2, 3, 4, 5]
+# print(*numbers)
+# # ---------------------------------
+# first = {"x": 1}
+# second = {"x": 10, "y": 2}
+# combined = {**first, **second, "z": 3}
+# print(combined)

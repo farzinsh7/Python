@@ -439,23 +439,48 @@ numbers = [1, 2, 3, 4]
 
 # print("x", x)
 # print("y", y)
+
 # ---------------
 
 #from array import array
 # for know about type code search on google "python3 typecode"
 # numbers = array("i", [1, 2, 3])
 # print(numbers)
+
 # ---------------
 
-numbers = [1, 1, 2, 3, 4, 4, 5]
-# only show the unique numbers and delete duplicate numbers {1, 2, 3, 4, 5}
-first = set(numbers)
-print(first)
-second = {1, 1, 2, 3, 4, 4, 5}  # it's just like first {1, 2, 3, 4, 5}
-print(second)
-third = {1, 2, 6, 7, 7}
-# combine two sets to one without duplicated number {1, 2, 3, 4, 5, 6, 7}
-print(first | third)
-print(first & third)  # show shared number in two sets {1,2}
-print(first - third)  # show different number in two sets {3,4,5}
-print(first ^ third)  # show different number in two sets {3,4,5}
+# numbers = [1, 1, 2, 3, 4, 4, 5]
+# # only show the unique numbers and delete duplicate numbers {1, 2, 3, 4, 5}
+# first = set(numbers)
+# print(first)
+# second = {1, 1, 2, 3, 4, 4, 5}  # it's just like first {1, 2, 3, 4, 5}
+# print(second)
+# third = {1, 2, 6, 7, 7}
+# # combine two sets to one without duplicated number {1, 2, 3, 4, 5, 6, 7}
+# print(first | third)
+# print(first & third)  # show shared number in two sets {1,2}
+# print(first - third)  # delete numbers are repeat in set in this example only 1 and 2 repeat in third set {3,4,5}
+# print(first ^ third)  # show different number in two sets {3, 4, 5, 6, 7}
+# we cannot access them using by index like first[0]
+
+# ---------------
+
+"""we have 2-way to define a dictionary"""
+point = {"x": 1, "y": 2}
+# point = dict(x=1, y=2)
+# -----------------------------------
+# print(point["a"]) # we get KeyError if key not in our dict
+"""there is two solution for this problem"""
+# 1
+# if "a" in point:
+#     print(point["a"])
+# 2
+# print(point.get("a"))
+# -----------------------------------
+# del point["x"] # for delete
+# -----------------------------------
+# for key in point:
+#     print(key, point[key])
+# ----or-----
+for key, value in point.items():
+    print(key, value)

@@ -279,6 +279,7 @@ we need to write code like this:"""
 # -----------------
 
 """For unpack the list there is two ways to do that"""
+from array import array
 numbers = [1, 2, 3, 4]
 # first = numbers[0]
 # second = numbers[1]
@@ -434,7 +435,27 @@ numbers = [1, 2, 3, 4]
 
 # x, y = y, x
 # -------or--------
-x, y = (11, 10)
+# x, y = (11, 10)
 
-print("x", x)
-print("y", y)
+# print("x", x)
+# print("y", y)
+# ---------------
+
+#from array import array
+# for know about type code search on google "python3 typecode"
+# numbers = array("i", [1, 2, 3])
+# print(numbers)
+# ---------------
+
+numbers = [1, 1, 2, 3, 4, 4, 5]
+# only show the unique numbers and delete duplicate numbers {1, 2, 3, 4, 5}
+first = set(numbers)
+print(first)
+second = {1, 1, 2, 3, 4, 4, 5}  # it's just like first {1, 2, 3, 4, 5}
+print(second)
+third = {1, 2, 6, 7, 7}
+# combine two sets to one without duplicated number {1, 2, 3, 4, 5, 6, 7}
+print(first | third)
+print(first & third)  # show shared number in two sets {1,2}
+print(first - third)  # show different number in two sets {3,4,5}
+print(first ^ third)  # show different number in two sets {3,4,5}

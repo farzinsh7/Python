@@ -516,3 +516,21 @@ point = {"x": 1, "y": 2}
 # second = {"x": 10, "y": 2}
 # combined = {**first, **second, "z": 3}
 # print(combined)
+
+# ---------------
+
+# sentence = "This is a common interview question or not so lets go on"
+
+# my_dict = {}
+# for char in sentence:
+#     if char in my_dict:
+#         my_dict[char] += 1
+#     else:
+#         my_dict[char] = 1
+
+# my_dict_sorted = sorted(my_dict.items(), key=lambda kv: kv[1], reverse=True)
+
+# if my_dict_sorted[0] != " ":
+#     print(my_dict_sorted[1])
+# else:
+#     print(my_dict_sorted[0])

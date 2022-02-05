@@ -482,5 +482,26 @@ point = {"x": 1, "y": 2}
 # for key in point:
 #     print(key, point[key])
 # ----or-----
-for key, value in point.items():
-    print(key, value)
+# for key, value in point.items():
+#     print(key, value)
+
+# ---------------
+
+# values = []
+# for x in range(5):
+#     values.append(x*2)  # [0,2,4,6,8]
+# ---or-----
+# values = [x * 2 for x in range(5)]  # we get list
+# values = {x * 2 for x in range(5)}  # we get set
+# values = {x: x * 2 for x in range(5)}  # we get dictionary
+
+# print(values)
+
+# ---------------
+
+# values = [x*2 for x in range(10)]  # we get list
+# for x in values:
+#     print(x)
+values = (x*2 for x in range(10))  # we get generator object
+print(values)
+"""generator object it's very usefull and have a lower size than others"""

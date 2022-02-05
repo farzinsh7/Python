@@ -428,5 +428,13 @@ numbers = [1, 2, 3, 4]
 # STACKS => LIFO => Last In - First Out
 # QUEUES => FIFO => First in - First Out
 # ---------------
-"""this is test message"""
-"""this is test message from home"""
+
+# x = 10
+# y = 11
+
+# x, y = y, x
+# -------or--------
+x, y = (11, 10)
+
+print("x", x)
+print("y", y)

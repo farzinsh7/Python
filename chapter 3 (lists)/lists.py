@@ -33,18 +33,43 @@ guests.append('hosein')
 # print(guests)
 # for guest in guests:
 #     print(f"Hi {guest} you are invited to my party")
-guest_popping = guests.pop()
-print(f"sorry {guest_popping} I dont have enough space for maybe next time")
-guest_popping = guests.pop()
-print(f"sorry {guest_popping} I dont have enough space for maybe next time")
-guest_popping = guests.pop()
-print(f"sorry {guest_popping} I dont have enough space for maybe next time")
-guest_popping = guests.pop()
-print(f"sorry {guest_popping} I dont have enough space for maybe next time")
-print(guests)
-for guest in guests:
-    print(f"Hi {guest} you are still invited to my party")
-del guests[0]
-print(guests)
-del guests[0]
-print(guests)
+# guest_popping = guests.pop()
+# print(f"sorry {guest_popping} I dont have enough space for maybe next time")
+# guest_popping = guests.pop()
+# print(f"sorry {guest_popping} I dont have enough space for maybe next time")
+# guest_popping = guests.pop()
+# print(f"sorry {guest_popping} I dont have enough space for maybe next time")
+# guest_popping = guests.pop()
+# print(f"sorry {guest_popping} I dont have enough space for maybe next time")
+# print(guests)
+# for guest in guests:
+#     print(f"Hi {guest} you are still invited to my party")
+# del guests[0]
+# print(guests)
+# del guests[0]
+# print(guests)
+# -----------------------------------
+# location = ['vancouver', 'rome', 'miami', 'newyork', 'shiraz']
+# print(location)
+# print(sorted(location))
+# print(location)
+# print(sorted(location, reverse=True))
+# print(location)
+# location.reverse()
+# print(location)
+# location.reverse()
+# print(location)
+# location.sort()
+# print(location)
+# location.sort(reverse=True)
+# print(location)
+# count_guests = len(guests)
+# print(f"We have {count_guests} in our party")
+# -----------------------------------
+cities = ['tehran', 'chalus', 'bandarabbas']
+countries = ['canada', 'iran', 'italy']
+cities.sort()
+countries.reverse()
+len_cities = len(cities)
+print(
+    f"There are {len_cities} cities I would like to go there such as {cities[2]}, after that I will go {countries[0]} with my wife")

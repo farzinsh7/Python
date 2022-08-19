@@ -12,3 +12,25 @@
 # find_num = text[find_0:]
 # fnum = float(find_num)
 # print(fnum)
+# fname = input("Enter you file name: ")
+# try:
+#     rfile = open(fname)
+# except:
+#     print("We cant fine your file", fname)
+#     quit()
+
+# count = 0
+# for line in rfile:
+#     if line.startswith("_ "):
+#         count += 1
+# print(f"There are {count} _ in your file")
+
+fname = input("Enter file name: ")
+try:
+    fhandle = open(fname)
+    rfile = fhandle.read()
+    rfile.rstrip()
+except:
+    print("Your file not defined!!!")
+    quit()
+print(rfile.upper())

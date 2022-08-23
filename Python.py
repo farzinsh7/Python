@@ -177,12 +177,21 @@
 # for v, k in lst[:3]:
 #     print(k, v)
 # -------------Tuple---------------
-# fname = input("Enter file name: ")
-oname = open("mbox-short.txt")
-
+fname = input("Enter file name: ")
+oname = open(fname)
+myDict = dict()
+myList = list()
+lst = list()
 for line in oname:
     line = line.rstrip()
     if line.startswith("From "):
         line = line.split()
         time = line[5].split(":")
-        print(time)
+        myList.append(time[0])
+for item in myList:
+    myDict[item] = myDict.get(item, 0)+1
+for key, value in myDict.items():
+    lst.append((key, value))
+lst = sorted(lst)
+for k, v in lst:
+    print(k, v)

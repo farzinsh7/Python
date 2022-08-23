@@ -111,3 +111,78 @@
 #         print(line[1])
 #         count += 1
 # print(f"There were {count} lines in the file with From as the first word")
+# ------------------Dictionaries-------------------
+# myList = [1, 2, 3, 4, 1, 2, 5, 1, 3, 2, 1, 1, 3, 2, 1, 4, 2, 3]
+# myDict = dict()
+# for num in myList:
+#     myDict[num] = myDict.get(num, 0)+1
+# print(myDict)
+# ------------------Dictionaries-2------------------
+# fname = open("romeo.txt")
+# myDict = dict()
+# for line in fname:
+#     line = line.rstrip().split()
+#     for elements in line:
+#         myDict[elements] = myDict.get(elements, 0)+1
+# print(myDict)
+# print(myDict.items())
+# print(myDict.keys())
+# print(myDict.values())
+# -------
+# fname = open("romeo.txt")
+# myDict = dict()
+# for line in fname:
+#     line = line.rstrip().split()
+#     for item in line:
+#         myDict[item] = myDict.get(item, 0)+1
+# for key, value in myDict.items():
+#     print(key, value)
+# -------------Assignment 9.4---------------
+# fname = input("Enter file name: ")
+# oname = open(fname)
+# myList = list()
+# myDict = dict()
+# for line in oname:
+#     line = line.rstrip()
+#     if line.startswith("From "):
+#         line = line.split()
+#         myList.append(line[1])
+# for item in myList:
+#     myDict[item] = myDict.get(item, 0)+1
+
+# bigWord = None
+# bigNumber = None
+# for word, num in myDict.items():
+#     if bigWord is None or num > bigNumber:
+#         bigWord = word
+#         bigNumber = num
+
+# print(bigWord, bigNumber)
+# -------------Tuple---------------
+# oname = open("mbox-short.txt")
+# myList = list()
+# myDict = dict()
+# for line in oname:
+#     line = line.rstrip()
+#     if line.startswith("From "):
+#         line = line.split()
+#         myList.append(line[1])
+# for item in myList:
+#     myDict[item] = myDict.get(item, 0)+1
+
+# lst = list()
+# for key, value in myDict.items():
+#     lst.append((value, key))
+# lst = sorted(lst, reverse=True)
+# for v, k in lst[:3]:
+#     print(k, v)
+# -------------Tuple---------------
+# fname = input("Enter file name: ")
+oname = open("mbox-short.txt")
+
+for line in oname:
+    line = line.rstrip()
+    if line.startswith("From "):
+        line = line.split()
+        time = line[5].split(":")
+        print(time)

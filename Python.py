@@ -39,3 +39,43 @@
 # [a-z0-9] مجموعه کاراکترها می تواند شامل یک محدوده باشد
 # (        نشان می دهد که استخراج رشته از کجا شروع می شود
 # )        نشان می دهد که استخراج رشته از کجا تموم می شود
+# -------------------------
+import urllib.request
+import urllib.parse
+import urllib.error
+from bs4 import BeautifulSoup
+
+# url = ('http://py4e-data.dr-chuck.net/comments_1613563.html')
+# test = urllib.request.urlopen(url).read()
+# soup = BeautifulSoup(test, 'html.parser')
+# total = 0
+# tags = soup('span')
+# for tag in tags:
+#     num = int(tag.get_text())
+#     total = total + num
+# print(total)
+# --------------------------
+import ssl
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+link = input('Enter url: ')
+cont = int(input("Enter count: "))
+line = int(input("Enter position: "))
+
+print(f"Retrieving: {link}")
+for i in range(0, cont):
+    html = urllib.request.urlopen(link, context=ctx).read()
+    soup = BeautifulSoup(html, 'html.parser')
+
+    tags = soup('a')
+    cn = 0
+    ps = 0
+    for tag in tags:
+        ps += 1
+        if ps == line:
+            print(f"Retrieving: {str(tag.get('href',None))}")
+            link = str(tag.get('href', None))
+            ps = 0
+            break

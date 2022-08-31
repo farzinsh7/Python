@@ -40,7 +40,7 @@
 # (        نشان می دهد که استخراج رشته از کجا شروع می شود
 # )        نشان می دهد که استخراج رشته از کجا تموم می شود
 # -------------------------
-import urllib.request
+from urllib.request import Request, urlopen
 import urllib.parse
 import urllib.error
 from bs4 import BeautifulSoup
@@ -60,22 +60,33 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-link = input('Enter url: ')
-cont = int(input("Enter count: "))
-line = int(input("Enter position: "))
+# link = input('Enter url: ')
+# cont = int(input("Enter count: "))
+# line = int(input("Enter position: "))
 
-print(f"Retrieving: {link}")
-for i in range(0, cont):
-    html = urllib.request.urlopen(link, context=ctx).read()
-    soup = BeautifulSoup(html, 'html.parser')
+# print(f"Retrieving: {link}")
+# for i in range(0, cont):
+#     html = urllib.request.urlopen(link, context=ctx).read()
+#     soup = BeautifulSoup(html, 'html.parser')
 
-    tags = soup('a')
-    cn = 0
-    ps = 0
-    for tag in tags:
-        ps += 1
-        if ps == line:
-            print(f"Retrieving: {str(tag.get('href',None))}")
-            link = str(tag.get('href', None))
-            ps = 0
-            break
+#     tags = soup('a')
+#     cn = 0
+#     ps = 0
+#     for tag in tags:
+#         ps += 1
+#         if ps == line:
+#             print(f"Retrieving: {str(tag.get('href',None))}")
+#             link = str(tag.get('href', None))
+#             ps = 0
+#             break
+# -----------------/
+req = Request(
+    url='https://city.hamyar.co/fifteen/',
+    headers={'User-Agent': 'Mozilla/5.0'}
+)
+webpage = urlopen(req).read()
+soup = BeautifulSoup(webpage, 'html.parser')
+
+tags = soup('a')
+for tag in tags:
+    print(tag.get('href', None))

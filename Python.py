@@ -40,10 +40,10 @@
 # (        نشان می دهد که استخراج رشته از کجا شروع می شود
 # )        نشان می دهد که استخراج رشته از کجا تموم می شود
 # -------------------------
-from urllib.request import Request, urlopen
-import urllib.parse
-import urllib.error
-from bs4 import BeautifulSoup
+# from urllib.request import Request, urlopen
+# import urllib.parse
+# import urllib.error
+# from bs4 import BeautifulSoup
 
 # url = ('http://py4e-data.dr-chuck.net/comments_1613563.html')
 # test = urllib.request.urlopen(url).read()
@@ -55,10 +55,10 @@ from bs4 import BeautifulSoup
 #     total = total + num
 # print(total)
 # --------------------------
-import ssl
-ctx = ssl.create_default_context()
-ctx.check_hostname = False
-ctx.verify_mode = ssl.CERT_NONE
+# import ssl
+# ctx = ssl.create_default_context()
+# ctx.check_hostname = False
+# ctx.verify_mode = ssl.CERT_NONE
 
 # link = input('Enter url: ')
 # cont = int(input("Enter count: "))
@@ -80,13 +80,53 @@ ctx.verify_mode = ssl.CERT_NONE
 #             ps = 0
 #             break
 # -----------------/
-req = Request(
-    url='https://city.hamyar.co/fifteen/',
-    headers={'User-Agent': 'Mozilla/5.0'}
-)
-webpage = urlopen(req).read()
-soup = BeautifulSoup(webpage, 'html.parser')
+# req = Request(
+#     url='https://city.hamyar.co/fifteen/',
+#     headers={'User-Agent': 'Mozilla/5.0'}
+# )
+# webpage = urlopen(req).read()
+# soup = BeautifulSoup(webpage, 'html.parser')
 
-tags = soup('a')
-for tag in tags:
-    print(tag.get('href', None))
+# tags = soup('a')
+# for tag in tags:
+#     print(tag.get('href', None))
+# --------XML----------
+# import xml.etree.ElementTree as ET
+
+# input = '''
+# <stuff>
+#     <users>
+#         <user x="2">
+#             <id>007</id>
+#             <name>Farzin</name>
+#         </user>
+#         <user x="20">
+#             <id>001</id>
+#             <name>Farshad</name>
+#         </user>
+#     </users>
+# </stuff>
+# '''
+# stuff = ET.fromstring(input)
+# lst = stuff.findall('users/user')
+# print(f"You have {len(lst)} Users in your list")
+# print('*****')
+# for item in lst:
+#     print('Name:', item.find('name').text)
+#     print('ID:', item.find('id').text)
+#     print('Security code:', item.get('x'))
+#     print('**********')
+# ---------Assignment----------
+import xml.etree.ElementTree as ET
+from urllib.request import Request, urlopen
+import urllib.parse
+import urllib.error
+url = input('Enter url: ')
+rfile = urlopen(url).read()
+inp = ET.fromstring(rfile)
+lst = inp.findall('comments/comment')
+total = 0
+for num in lst:
+    num = int(num.find('count').text)
+    total += num
+print(total)

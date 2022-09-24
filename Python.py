@@ -83,3 +83,43 @@
 # queue.popleft()
 # queue.popleft()
 # print(queue)
+# -------------------Session 16-----------------------
+# numbers = [1, 2, 3, 4, 4, 4]
+# first = set(numbers)
+# second = {6, 1, 2, 5}
+# print(first | second)
+# print(first & second)
+# print(first - second)
+# print(first ^ second)
+# -------------------Session 19-----------------------
+# my_dict = {"x": 1, "y": 2}
+# print(my_dict)
+# my_dict1 = dict(x=2, y=3)
+# print(my_dict1)
+# -------------------Session 20-----------------------
+# values = [x*2 for x in range(5)]  # We get list
+# values = {x*2 for x in range(5)}  # We get set
+# values = {x: x*2 for x in range(5)}  # We get dictionary
+# -------------------Session 21-----------------------
+# from sys import getsizeof
+# values = (x*2 for x in range(1000000))
+# values1 = [x*2 for x in range(1000000)]
+# print("Generator:", getsizeof(values))
+# print("List:", getsizeof(values1))
+# -------------------Session 22-----------------------
+# To unpack lists we use *
+# To unpack dictionaries we use **
+# -------------------Exerciese-----------------------
+# from pprint import pprint
+# sentance = "This is a common interview question"
+# char_frequency = {}
+# for char in sentance:
+#     if char in char_frequency:
+#         char_frequency[char] += 1
+#     else:
+#         char_frequency[char] = 1
+# char_frequency_sorted = sorted(
+#     char_frequency.items(),
+#     key=lambda kv: kv[1],
+#     reverse=True)
+# print(char_frequency_sorted[0])

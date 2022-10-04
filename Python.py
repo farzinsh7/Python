@@ -123,10 +123,29 @@
 #     key=lambda kv: kv[1],
 #     reverse=True)
 # print(char_frequency_sorted[0])
+# -------------------Practice-----------------------
+# ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+# my_dict = {}
+# for char in ipsum:
+#     if char in my_dict:
+#         my_dict[char] += 1
+#     else:
+#         my_dict[char] = 1
+# my_dict_sorted = sorted(
+#     my_dict.items(),
+#     key=lambda kv: kv[1],
+#     reverse=True
+# )
+# print(my_dict_sorted[1])
 # -------------------Exceptions-----------------------
-ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-count = 0
-for char in ipsum:
-    if char == "f":
-        count += 1
-print(count)
+try:
+    file = open("coursera\words.txt")
+    file.write("hello")
+    age = int(input("Enter your Age: "))
+    xfactor = 10/age
+except (ValueError, ZeroDivisionError):
+    print("You Didn't enter a valid age")
+else:
+    print("No exceptions were thrown.")
+finally:
+    file.close()

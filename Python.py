@@ -201,3 +201,68 @@
 # print("First code=", timeit(code1, number=10000))
 # print("First code=", timeit(code2, number=10000))
 # -------------------Classes-------------------
+# class Point:
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+
+#     @classmethod
+#     def zero(cls):
+#         return cls(0, 0)
+
+#     def draw(self):
+#         print(f"Point ({self.x},{self.y})")
+
+
+# point = Point.zero()
+# point.draw()
+
+# -------------------Class-Magic methods------------------
+
+# class Point:
+
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+
+#     def __str__(self):
+#         return f"This is how you can convert to STR your point is ({self.x},{self.y})"
+
+
+# point = Point(2, 6)
+# print(point)
+# --------------------------------
+
+# class Point:
+
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+
+#     def __eq__(self, other):
+#         return self.x == other.x and self.y == other.y
+
+#     def __gt__(self, other):
+#         return self.x > other.x and self.y > other.y
+
+
+# point = Point(1, 2)
+# point_1 = Point(1, 2)
+# print(point == point_1)
+# print(point > point_1)
+
+# -------------------
+class Point:
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y+other.y)
+
+
+point = Point(2, 4)
+point_1 = Point(1, 2)
+combined = point + point_1
+print(combined.y)

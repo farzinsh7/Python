@@ -252,17 +252,18 @@
 # print(point > point_1)
 
 # -------------------
-class Point:
+# class Point:
 
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
 
-    def __add__(self, other):
-        return Point(self.x + other.x, self.y+other.y)
+#     def __add__(self, other):
+#         return Point(self.x + other.x, self.y+other.y)
 
 
-point = Point(2, 4)
-point_1 = Point(1, 2)
-combined = point + point_1
-print(combined.y)
+# point = Point(2, 4)
+# point_1 = Point(1, 2)
+# combined = point + point_1
+# print(combined.y)
+# -------------------Class Cutom container------------------
